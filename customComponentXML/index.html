@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="myApp">
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.js"></script>
+    <script type="text/babel">
+
+        /*
+        * All the parameters passed to a component will be available in this.props object.
+        * You can use the properties by referencing the keys like this.props.name
+        */
+
+        var Component = React.createClass({
+            render: function () {
+                return <h1>My name is {this.props.name}</h1>;
+            }
+        });
+        /* You can use this method as well
+        * var Component = React.createClass({
+        *   render: function () {
+        *        return React.DOM.span(null, "My name is " + this.props.name);
+        *    }
+        * });
+        */
+
+        ReactDOM.render(
+            <Component name="haseeb" />,
+            document.getElementById("myApp")
+        );
+
+    </script>
+</body>
+
+</html>

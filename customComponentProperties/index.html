@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="myApp">
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+    <script>
+
+        /*
+        * All the parameters passed to a component will be available in this.props object.
+        * You can use the properties by referencing the keys like this.props.name
+        */
+        var Component = React.createClass({
+            render: function () {
+                return React.DOM.span(null, "My name is " + this.props.name);
+            }
+        });
+
+        ReactDOM.render(
+            React.createElement(Component, {
+                name: "Bob"
+            }),
+            document.getElementById("myApp")
+        );
+
+
+        /*
+        * You can also declare the properties your component will use in propTypes property
+            var Component = React.createClass({
+                propTypes: {
+                    name: React.PropTypes.string.isRequired
+                },
+                render: function() {
+                    return React.DOM.span(null, "My name is " + this.props.name);
+                }
+            }); 
+
+        * React.PropTypes.string.isRequired validates that name should be string and should not be empty
+        */
+
+
+    </script>
+</body>
+
+</html>
